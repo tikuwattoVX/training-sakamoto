@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM</title>
+  <style>
+    * { font-size: 20px;}
+    div { border: 1px solid gray;}
+  </style>
+</head>
+<body>
+  <p>
+    <input id="inp1" type="text">
+    <button onclick="but1();">押す</button>
+  </p>
+  <div id="out1">出力</div>
+  <script>
+    function but1() {
+      var str = document.getElementById('inp1').value;
+      var str = str.replace("あ", "い");
+      document.getElementById('out1').innerHTML = str;
+    }
+  </script>
+</body>
+</html>
