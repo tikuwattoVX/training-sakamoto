@@ -1,0 +1,59 @@
+// MySQLの起動
+ターミナル
+/Applications/XAMPP/bin/mysql -u root
+
+/* SQL言語 */
+// 現在あるデータベースを表示する
+mysql> show databases;
+
+// MySQLの終了
+mysql> exit;
+
+// データベースの作成
+create database shop character set utf8;
+
+// データベースの削除
+drop database shop;
+show databases;     // 確認用
+
+// 使用中のデータベースきりかえ
+use shop;
+
+// テーブル作成
+create table item (
+  id int not null primary key auto_increment, // 主キー
+  name varchar(255),
+  price int,
+  memo text
+);
+
+// テーブル確認
+show tables;
+
+// テーブル定義の確認
+desc item;
+
+// テーブル削除
+drop table item;
+show tables;      // 確認用
+
+// データの挿入（INSERT）
+insert into item (name, price, memo) values ('チョコ', 100, 'ポリフェノール入り');
+insert into item (name, price, memo) values ('');
+insert into item (name, price, memo) values ('');
+
+// データの選択
+select * from item;
+
+// データの更新
+update item set memo = '今月のイチオシ' where id = 1;
+select * from item;
+
+// データの削除
+delete from item where id = 1;
+select * from item;
+delete from item;
+select * from item;
+
+// コマンドラインツールの終了
+exit;

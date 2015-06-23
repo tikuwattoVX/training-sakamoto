@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>camvas</title>
+  <style>
+    #canvas1 {
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas1" width="200px" height="200px"></canvas>
+
+  <script>
+    var canvas1 = document.getElementById('canvas1');
+    var c = canvas1.getContext('2d');
+
+    var x=1;
+
+    setInterval(anime,50);
+
+
+
+    function anime() {
+      c.clearRect(0,0,200,200);
+      c.save();
+      c.scale(x,x);
+      maimai();
+      c.restore();
+
+      x-=0.01;
+    }
+
+
+
+
+
+
+
+
+    function maimai() {
+      // 短径
+      c.fillStyle = "red";
+      c.fillRect(0,0,60,60);
+      c.fillStyle = "skyblue";
+      c.fillRect(50,0,60,60);
+      c.clearRect(20,20,20,20);
+      c.clearRect(70,20,20,20);
+
+      // 多角形
+      c.beginPath();
+      c.moveTo(50,100);
+      c.lineTo(50,200);
+      c.lineTo(200,200);
+      c.closePath();
+      c.fillStyle = "#c39143";
+      c.fill();
+
+      // 線
+      c.beginPath();
+      c.moveTo(40,60);
+      c.lineTo(50,100);
+      c.lineTo(60,60);
+      c.lineWidth = 5;
+      c.strokeStyle = "black";
+      c.stroke();
+
+      // 円弧
+      c.beginPath();
+      c.arc(130,120,70,0,2*Math.PI,false);
+      c.closePath();
+      c.fillStyle = "brown";
+      c.fill();
+
+      // 文字
+      c.fillStyle = "white";
+      c.font = "100px serif";
+      c.fillText("蝸",80,160);
+    }
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>memo</title>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+  <h1>メモ帳</h1>
+  <textarea name="40" id="memo" cols="40" rows="10"></textarea>
+  <p><input id="save" type="button" value="保存">
+    <input id="clear" type="button" value="消去"></p>
+
+  <script>
+    $(function() {
+
+      /* localStorageに保存データがあれば読み込む処理 */
+      if (localStorage.getItem('memo')) {
+          $('#memo').val(localStorage.getItem('memo'));
+      }
+
+      /* 保存ボタンを押した際の処理 */
+      $('#save').click(function() {
+        localStorage.setItem('memo', $('#memo').val());
+      });
+
+      /* 消去ボタンを押した際の処理 */
+      $('#clear').click(function() {
+        $('#memo').val('');
+        localStorage.removeItem('memo');
+      });
+
+      // (function autoSave() {
+      //   localStorage.setItem('memo', $('#memo').val());
+      //   setTimeout(autoSave, 1000);
+      // })();
+    });
+
+
+
+  </script>
+</body>
+</html>
