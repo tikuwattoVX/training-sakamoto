@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_weight="1"
+        android:text="@string/timer_label"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="64sp"
+        android:textStyle="bold"
+        android:id="@+id/timerLabel"
+        android:layout_height="0dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/startButton"
+            android:onClick="startTimer"
+            android:text="@string/start_label"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/stopButton"
+            android:onClick="stopTimer"
+            android:text="@string/stop_label"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/resetButton"
+            android:onClick="resetTimer"
+            android:text="@string/reset_label"/>
+        </LinearLayout>
+
+</LinearLayout>
